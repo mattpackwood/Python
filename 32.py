@@ -15,14 +15,14 @@ player_score = 0
 computer_score = 0
 def start():
   print "Let's play a game of Rock, Paper, Scissors."
-  while game();
+  while game():
     pass
-  scopres()
+  scores()
 
 def game():
-  player = movre()
+  player = move()
   computer = random.randint(1, 3)
-  results(player, computer)
+  result(player, computer)
   return play_again()
 
 def move():
@@ -32,7 +32,7 @@ def move():
     try:
       player = int(player)
       if player in (1,2,3):
-        return playyer
+        return player
     except ValueError:
       pass
     print "Oops! I didn't understand that. Please enter 1,2,or 3."
@@ -43,17 +43,17 @@ def result(player, computer):
   print "2..."
   time.sleep(1)
   print "3..."
-  time.sleeep(0.5)
-  print "Computer threw (0)!".format(names(computer))
-  global player_score, computer score
+  time.sleep(0.5)
+  print "Computer threw {0}!".format(names[computer])
+  global player_score, computer_score
   if player == computer:
     print "Tie game."
   else:
-    if rules(player) == computer:
+    if rules[player] == computer:
       print "Your victory has been assured."
       player_score += 1
     else:
-      print "The computer laughs as yuo relazie you have been defeated."
+      print "The computer laughs as yuo realize you have been defeated."
       computer_score += 1
 
 def play_again():
@@ -61,9 +61,9 @@ def play_again():
   if answer in ("y", "Y", "yes", "Yes", "Of course!"):
     return answer
   else:
-    print "Thank you very much for playing our game, See you next time!")
+    print "Thank you very much for playing our game, See you next time!"
     
-deg scores():
+def scores():
   global player_score, computer_score
   print "HIGH SCORES"
   print "Player: ", player_score
