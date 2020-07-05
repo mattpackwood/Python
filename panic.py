@@ -1,4 +1,4 @@
-phrase = "Don't panic!"
+phrase = "Don't panic!!!"
 plist = list(phrase)
 for i in range(4):
     plist.pop()
